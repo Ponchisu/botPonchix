@@ -35,7 +35,6 @@ const command = {
             id = id.slice(2, -1)
         }
         try {
-            console.log(id)
             let user = await msg.guild?.members.fetch(id)
             if(msg.author.id === user?.id) {
                 if(!msg.inGuild()) return;

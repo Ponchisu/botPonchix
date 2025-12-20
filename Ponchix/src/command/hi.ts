@@ -1,4 +1,5 @@
 import { Message, EmbedBuilder, Guild } from "discord.js";
+import dirBase from "..";
 
 const command = {
     name: "hi", 

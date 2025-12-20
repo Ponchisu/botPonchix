@@ -1,4 +1,3 @@
-// import { Message } from "discord.js";
 import { Message, EmbedBuilder} from "discord.js"
 import { join } from "path";
 import dirBase from "..";
@@ -11,7 +10,6 @@ const event = {
     name: "messageCreate",
     
     execute: async (msg: Message) => {
-        //msg.react('🫃')
         if (msg.author.bot) return;
         if (!msg.content.startsWith(prefix)) return;
         let args = msg.content.slice(prefix.length).trim().split(/\s+/);
