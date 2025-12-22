@@ -1,8 +1,8 @@
 import {Client, GatewayIntentBits, Message} from "discord.js"
 import {join} from "path";
-import dotenv from 'dotenv'
 import { readdir, readdirSync } from "fs";
-dotenv.config()
+import config from "./config";
+
 
 
 const client = new Client({
@@ -11,10 +11,11 @@ const client = new Client({
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildMessageReactions,
     ],
 });
 
-if(!process.env.DISCORD_TOKEN || !process.env.CLIENT_ID) {
+if(!config.discord.TOKEN || !config.discord.CLIENTE) {
     throw new Error("`DISCORD_TOKEN` or `CLIENT_ID` no encontrados");
 }
 
@@ -28,6 +29,6 @@ readdirSync(eventDir).forEach((file) => {
     client.on(event.name, (...args) => event.execute(...args));
 });
 
-client.login(process.env.DISCORD_TOKEN);
+client.login(config.discord.TOKEN);
 
 export default dirBase;

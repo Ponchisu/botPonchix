@@ -11,7 +11,7 @@ const command = {
                 .setColor(16056575)
                 .addFields({
                     name: "Admin:", 
-                    value: "`.ban [miembro] (motivo)` \n`.unban[miembro] ` \n`.mute[miembro] [tiempo] (motivo)` \n`.unmute [miembro]`\n`.kick [miembro]`", 
+                    value: "`.ban [miembro] (motivo)` \n`.unban[miembro] ` \n`.mute[miembro] [tiempo] (motivo)` \n`.unmute [miembro]`\n`.kick [miembro]`\n`.pf [prefijo]`\n.`autorol [emoji] [rolId] (hasta 10)`", 
                     inline: false
                 })
             ]
